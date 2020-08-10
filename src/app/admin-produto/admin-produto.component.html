@@ -1,0 +1,234 @@
+<div class="area">
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a [routerLink]="['/home_admin']">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        HOME
+                    </span>
+                </a>
+            
+            </li>
+            <li>
+                <a [routerLink]="['/admin_fornecedor']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        FORNECEDORES
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin_produto']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        PRODUTOS
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin_marca']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        MARCAS
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin_conta']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        CONTAS
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin_vendas']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        VENDAS
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout">
+            <li>
+            <a href="#">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+</div>
+
+
+<div style="margin-top: 55px;" class="row">
+  <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+    <button data-toggle="modal" data-target="#exampleModal4" class="btn btn-secondary" style="float: right;margin-right: 18px;background-color: #EF8354;">adicionar</button>
+  </div>
+</div>
+
+<div class="container-fluid table-responsive" style="padding: 0 5px 0 65px!important;">
+    <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">descricao</th>
+            <th scope="col">valor</th>
+            <th scope="col">destaque</th>
+            <th scope="col">estoque</th>
+            <th scope="col">Fornecedor</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produto of produtos">
+            <th id="id_corte" scope="row">{{ produto?.id }}</th>
+            <td id="id_corte1">{{ produto?.nome }}</td>
+            <td id="id_corte1">{{ produto?.descricao }}</td>
+            <td id="id_corte1">{{ produto?.valor }}</td>
+            <td id="id_corte1">{{ produto?.destaque }}</td>
+            <td id="id_corte1">{{ produto?.estoque }}</td>
+            <td id="id_corte1">{{ produto?.fornecedor?.nome }}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" (click)="Adicionar(1, produto?.id, produto?.nome, produto?.descricao, produto?.valor, produto?.destaque, produto?.estoque, produto?.fornecedor)" data-toggle="modal" data-target="#exampleModal1" class="btn btn-secondary">edit</button>
+                    <button type="button" (click)="Adicionar(2, produto?.id, produto?.nome, produto?.descricao, produto?.valor, produto?.destaque, produto?.estoque, produto?.fornecedor)" data-toggle="modal" data-target="#exampleModal2" class="btn btn-secondary">del</button>
+                    <button type="button" (click)="Adicionar(3, produto?.id, produto?.nome, produto?.descricao, produto?.valor, produto?.destaque, produto?.estoque, produto?.fornecedor)" data-toggle="modal" data-target="#exampleModal3" class="btn btn-secondary">detalhes</button>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+  <!-- /#page-content-wrapper -->
+
+
+<!--MODALS-->
+
+<!--adicionar-->
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit1()">
+
+          <div class="form-group">
+            <label>Nome</label>
+            <input formControlName="nome" type="text" class="form-control">
+            <br />
+            <label>Descrição</label>
+            <input formControlName="descricao" name="descricao" type="text" class="form-control" value="{{modal_descricao}}" aria-describedby="descricao" placeholder="Seu nome">
+          
+            <br />
+            <label>Valor</label>
+            <input formControlName="valor" name="valor" type="number" class="form-control" value="{{modal_valor}}" aria-describedby="valor" placeholder="valor">
+          
+            <br />
+            <label>estoque</label>
+            <input formControlName="estoque" name="estoque" type="number" class="form-control" value="{{modal_estoque}}" aria-describedby="estoque" placeholder="qtd estoque">
+          
+            <br />
+            <label>marcaId</label>
+            <input formControlName="marcaId" name="marcaId" type="text" class="form-control" value="{{modal_marca}}" aria-describedby="marca" placeholder="id marca">
+          
+            <br />
+            <label>fornecedorId</label>
+            <input formControlName="fornecedorId" name="fornecedorId" type="text" class="form-control" value="{{modal_fornecedor}}" aria-describedby="fornecedor" placeholder="id fornecedor">
+          
+          </div>
+
+          <button type="button" class="btn btn-secondary botao" data-dismiss="modal">Fechar</button>
+          <button type="submit" [disabled]="!profileForm.valid" name="button" class="btn btn-primary botao">Salvar</button>
+        </form>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+<!--edit-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+              <label>ID</label>
+              <input disabled="" type="text" value="{{modal_id}}" class="form-control">
+              <br />
+              <label>Nome</label>
+              <input formControlName="nome" name="nome" type="text" class="form-control" value="{{modal_nome}}" aria-describedby="nome" placeholder="Seu nome">
+            
+              <br />
+              <label>Descrição</label>
+              <input formControlName="descricao" name="descricao" type="text" class="form-control" value="{{modal_descricao}}" aria-describedby="descricao" placeholder="Seu nome">
+            
+              <br />
+              <label>Valor</label>
+              <input formControlName="valor" name="valor" type="number" class="form-control" value="{{modal_valor}}" aria-describedby="valor" placeholder="valor">
+            
+              <br />
+              <label>estoque</label>
+              <input formControlName="estoque" name="estoque" type="number" class="form-control" value="{{modal_estoque}}" aria-describedby="estoque" placeholder="qtd estoque">
+            
+            </div>
+
+            <button id="edit" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button id="edit" type="submit" [disabled]="!profileForm.valid" name="button" class="btn btn-primary">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--detalhes-->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label>ID</label>
+          <input disabled="" type="text" value="{{modal_id}}" class="form-control">
+          <br />
+          <label>Nome</label>
+          <input disabled="" type="text" value="{{modal_nome}}" class="form-control">
+          <br />
+          <label>Valor</label>
+          <input disabled="" type="number" value="{{modal_valor}}" class="form-control">
+          <br />
+          <label>Descrição</label>
+          <input disabled="" type="text" value="{{modal_descricao}}" class="form-control">
+          <br />
+          <label>estoque</label>
+          <input disabled="" type="number" value="{{modal_estoque}}" class="form-control">
+          <br />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="area">
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a [routerLink]="['/home_admin']">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        HOME
+                    </span>
+                </a>
+            
+            </li>
+            <li>
+                <a [routerLink]="['/admin_fornecedor']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        FORNECEDORES
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin_produto']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        PRODUTOS
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin_marca']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        MARCAS
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin_conta']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        CONTAS
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/admin_vendas']">
+                    <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <span class="nav-text">
+                        VENDAS
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout">
+            <li>
+            <a href="#">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+</div>
+
+<div class="container-fluid">
+    <div class="row" style="padding: 0 5px 0 55px;">
+        <div class="col-xl-3 col-sm-4 col-12"> 
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="media d-flex">
+                            <div class="align-self-center">
+
+                            </div>
+                            <div class="media-body text-right">
+                                <h3>VENDAS</h3>
+                                <h4>Valor: <span style="font-size: 25px;"> {{vendas?.soma_valor_vendas}}</span></h4>
+                                <h4>Quantidade: <span style="font-size: 25px;"> {{vendas?.qtd_vendas}}</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-4 col-12"> 
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>ESTOQUE</h3>
+                                    <h4>Valor: <span style="font-size: 25px;"> {{estoque?.soma_valor_prod}}</span></h4>
+                                    <h4>Quantidade: <span style="font-size: 25px;"> {{estoque?.qtd_prod}}</span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-xl-3 col-sm-4 col-12"> 
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    
+                                </div>
+                                <div class="media-body text-right">
+                                    <h3>CONTAS</h3>
+                                    <h4>total: <span style="font-size: 25px;"> {{sum}}</span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<div style="margin-top: 50px;justify-content: center;" class="row">
+    <h2>TOP 10 Ultimos Vendidos</h2>
+</div>
+<div class="container-fluid table-responsive" style="padding: 0 5px 0 65px!important;">
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">id_produto</th>
+          <th scope="col">data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let top_venda of top_vendas">
+          <th id="id_corte" scope="row">{{top_venda?.id_produto}}</th>
+          <td id="id_corte">{{top_venda?.created_at}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+    <!-- /#page-content-wrapper -->

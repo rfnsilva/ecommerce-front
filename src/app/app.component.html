@@ -1,0 +1,187 @@
+
+<div id="header_none"class="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">Navegação</a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+            
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a [routerLink]="['/home']" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a [routerLink]="['/produtos']" class="nav-link text-uppercase font-weight-bold">Produtos</a></li>
+                    <li class="nav-item"><a [routerLink]="['/categorias']" class="nav-link text-uppercase font-weight-bold">Categorias</a></li>
+                    <li class="nav-item"><a [routerLink]="['/contact']" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
+                    <ng-template [ngIf]="ctrl" [ngIfElse]="else_ctrl">
+                        <li class="nav-item">
+                            <div class="btn-wrapper">
+                                <div class="btn-wrapper__container">
+                                <div class="btn-inner">
+                                    <button data-toggle="modal" data-target="#login" class="btn-inner__text" style="background-color:#10131c;border: none;">Sign in</button>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="btn-wrapper">
+                                <div class="btn-wrapper__container">
+                                <div class="btn-inner">
+                                    <button data-toggle="modal" data-target="#register" class="btn-inner__text" style="background-color:#10131c;border: none;">Sign up</button>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ng-template>
+                    <ng-template #else_ctrl>
+                        <li class="nav-item"><a [routerLink]="['/carrinho']" class="nav-link text-uppercase font-weight-bold">Carrinho</a></li>
+                        <li class="nav-item">
+                            <div class="btn-wrapper">
+                                <div class="btn-wrapper__container">
+                                <div class="btn-inner">
+                                    <button (click)="logout()" class="btn-inner__text" style="background-color:#10131c;border: none;">Logout</button>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ng-template>
+                </ul>
+            </div>
+        </div>
+      </nav>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<div id="footer_none" class="footer">
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
+            <div class="col-12">
+                <div class="row row-2">
+                    <div class="col-sm-3 text-md-center">
+                        <h5><span> <i class="fa fa-firefox text-light" aria-hidden="true"></i></span><b> Stride</b></h5>
+                    </div>
+                    <div class="col-sm-3 my-sm-0 mt-5">
+                        <ul class="list-unstyled">
+                            <li class="mt-0">
+                                <button data-toggle="modal" data-target="#login_admin" class="btn-inner__text" style="background-color:#10131c;border: none;cursor:pointer;">Admin</button>
+                            </li>
+                            <li>Help Center</li>
+                            <li>Security</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 my-sm-0 mt-5">
+                        <ul class="list-unstyled">
+                            <li class="mt-0">Customers</li>
+                            <li>Use Cases</li>
+                            <li>Customers Services</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 my-sm-0 mt-5">
+                        <ul class="list-unstyled">
+                            <li class="mt-0">Company</li>
+                            <li>About</li>
+                            <li>Careers- <span class="Careers">We're-hiring</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
+            <div class="col-12">
+                <div class="row my-4 row-1 no-gutters">
+                    <div class="col-sm-3 col-auto text-center"><small>&#9400; Stride Softwere</small></div>
+                    <div class="col-md-3 col-auto "></div>
+                    <div class="col-md-3 col-auto"></div>
+                    <div class="col my-auto text-md-left text-right "> <small> hello@getstride.com <span><img src="https://i.imgur.com/TtB6MDc.png" class="img-fluid " width="25"></span> <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid " width="25"></span></small> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Email</label>
+                  <input formControlName="email" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Senha</label>
+                  <input formControlName="senha" type="text" class="form-control">
+                </div>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="button" [disabled]="!profileForm.valid" class="btn btn-primary">Login</button>
+              </form>
+        </div>
+      </div>
+    </div>
+</div><!-- Modal -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registrar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit_2()">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Email</label>
+                  <input formControlName="email" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Senha</label>
+                  <input formControlName="senha" type="text" class="form-control">
+                </div>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="button" [disabled]="!profileForm.valid" class="btn btn-primary">Registrar</button>
+              </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="login_admin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Admin Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit_1()">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Email</label>
+                  <input formControlName="email" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Senha</label>
+                  <input formControlName="senha" type="text" class="form-control">
+                </div>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="button" [disabled]="!profileForm.valid" class="btn btn-primary">Login</button>
+              </form>
+        </div>
+      </div>
+    </div>
+</div>
