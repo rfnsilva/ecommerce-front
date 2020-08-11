@@ -16,6 +16,7 @@ export class AdminProdutoComponent implements OnInit {
     valor: new FormControl(''),
     descricao: new FormControl(''),
     estoque: new FormControl(''),
+    destaque: new FormControl(''),
     fornecedorId: new FormControl(''),
     marcaId: new FormControl(''),
   });
@@ -26,7 +27,7 @@ export class AdminProdutoComponent implements OnInit {
   public modal_valor: number;
   public modal_estoque: number;
   public modal_descricao: string;
-  public modal_destaque: boolean;
+  public modal_destaque: string;
   public modal_fornecedor: any;
   public modal_marca: any;
 
@@ -40,7 +41,7 @@ export class AdminProdutoComponent implements OnInit {
 
   ngOnInit(): void {
     this.javascript();
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
 
     const headers= new HttpHeaders()
      .set('content-type', 'application/json')
@@ -53,11 +54,11 @@ export class AdminProdutoComponent implements OnInit {
      });
   }
 
-  Adicionar(id_button: number, id: string, nome: string, descricao: string, valor: number, destaque: boolean, estoque: number, fornecedor: any) {
+  Adicionar(id_button: number, id: string, nome: string, descricao: string, valor: number, destaque: string, estoque: number, fornecedor: any) {
     //edit = 1 del = 2 detalhes = 3
     
     if (id_button === 2) {
-      let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+      let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
 
       if(confirm("confirma delete do produto: " + id)) {
         const headers= new HttpHeaders()
@@ -94,13 +95,13 @@ export class AdminProdutoComponent implements OnInit {
   }
 
   editar(produto: any) {
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
-    console.log(produto)
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
     const cat_enviar = {
       nome: `${produto.nome}`,
       valor: `${produto.valor}`,
       estoque: `${produto.estoque}`,
-      descricao: `${produto.descricao}`
+      descricao: `${produto.descricao}`,
+      destaque: `${produto.destaque}`
     }
     
     const headers = new HttpHeaders()
@@ -119,19 +120,17 @@ export class AdminProdutoComponent implements OnInit {
   }
 
   add(produto: any) {
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
     
     const headers = new HttpHeaders()
      .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
       .set('authorization', `bearer ${user_data.token}`);
     
-    console.log(produto)
    
     this.http.post(`${this.apiURL}/add_produto_admin`, produto, { 'headers': headers })
      .subscribe(result => {
        this.produtos = result;
-       console.log(this.produtos)
      });
   }
 

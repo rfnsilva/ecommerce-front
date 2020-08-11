@@ -62,10 +62,17 @@
                     </div>
                     <div class="col-sm-3 my-sm-0 mt-5">
                         <ul class="list-unstyled">
+
+
                             <li class="mt-0">
-                                <button data-toggle="modal" data-target="#login_admin" class="btn-inner__text" style="background-color:#10131c;border: none;cursor:pointer;">Admin</button>
+                                <button data-toggle="modal" data-target="#login_admin" class="btn-inner__text" style="background-color:#10131c;border: none;cursor:pointer;">Admin Login</button>
                             </li>
-                            <li>Help Center</li>
+                            <li class="mt-0">
+                                <button data-toggle="modal" data-target="#register_admin" class="btn-inner__text" style="background-color:#10131c;border: none;cursor:pointer;">Admin Register</button>
+                            </li>
+
+
+
                             <li>Security</li>
                         </ul>
                     </div>
@@ -101,7 +108,9 @@
 
 
 
-<!-- Modal -->
+<!-- Modals -->
+
+<!-- LOGIN CLIENTE -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -128,7 +137,8 @@
         </div>
       </div>
     </div>
-</div><!-- Modal -->
+</div>
+<!-- REGISTER CLIENTE -->
 <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -157,7 +167,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- LOGIN ADMIN -->
 <div class="modal fade" id="login_admin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -180,6 +190,34 @@
 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" name="button" [disabled]="!profileForm.valid" class="btn btn-primary">Login</button>
+              </form>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- REGISTER ADMIN -->
+<div class="modal fade" id="register_admin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Admin Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit_3()">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Email</label>
+                  <input formControlName="email" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Senha</label>
+                  <input formControlName="senha" type="text" class="form-control">
+                </div>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="button" [disabled]="!profileForm.valid" class="btn btn-primary">Registrar</button>
               </form>
         </div>
       </div>

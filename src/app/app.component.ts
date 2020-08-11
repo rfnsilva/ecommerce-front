@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
 
   @Input()
   public ctrl: boolean = true;
+  @Input()
+  public ctrl_admin: boolean = true;
 
   constructor(private http : HttpClient, private r: Router){
     this.apiURL = 'http://localhost:3333';
@@ -33,6 +35,10 @@ export class AppComponent implements OnInit {
     }
   }
 
+  onSubmit() {
+    this.login(this.profileForm.value);
+  }
+
   login(user: any) {
     this.http.post(`${this.apiURL}/login`, user)
       .subscribe(result => {
@@ -41,9 +47,9 @@ export class AppComponent implements OnInit {
         this.r.navigate(['/home']);
       });
   }
-  
-  onSubmit() {
-    this.login(this.profileForm.value);
+
+  onSubmit_2() {
+    this.register(this.profileForm.value);
   }
 
   register(user: any) {
@@ -55,27 +61,34 @@ export class AppComponent implements OnInit {
       });
   }
   
-  onSubmit_2() {
-    this.register(this.profileForm.value);
+  onSubmit_1() {
+    this.login_admin(this.profileForm.value);
+  }
+
+  login_admin(user: any) {
+    this.http.post(`${this.apiURL}/login_admin`, user)
+      .subscribe(result => {
+        window.localStorage.setItem('currentAdmin', JSON.stringify(result));
+        this.r.navigate(['/home_admin']);
+      });
+  }
+
+  onSubmit_3() {
+    this.register_admin(this.profileForm.value);
+  }
+
+  register_admin(user: any) {
+    this.http.post(`${this.apiURL}/register_admin`, user)
+      .subscribe(result => {
+        window.localStorage.setItem('currentAdmin', JSON.stringify(result));
+        this.r.navigate(['/home_admin']);
+      });
   }
 
   logout() {
     this.ctrl = true;
     window.localStorage.clear();
   }
-  
-  onSubmit_1() {
-    this.login_admin(this.profileForm.value);
-  }
-
-  login_admin(user: any) {
-    this.http.post(`${this.apiURL}/login`, user)
-      .subscribe(result => {
-        window.localStorage.setItem('currentUser', JSON.stringify(result));
-        this.r.navigate(['/home_admin']);
-      });
-  }
-
 
   javascript() {
     // Toggle Animation by Class

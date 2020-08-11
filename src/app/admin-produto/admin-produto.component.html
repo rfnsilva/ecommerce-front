@@ -126,26 +126,30 @@
 
           <div class="form-group">
             <label>Nome</label>
-            <input formControlName="nome" type="text" class="form-control">
+            <input formControlName="nome" type="text" class="form-control" placeholder="Nome">
             <br />
             <label>Descrição</label>
-            <input formControlName="descricao" name="descricao" type="text" class="form-control" value="{{modal_descricao}}" aria-describedby="descricao" placeholder="Seu nome">
+            <input formControlName="descricao" name="descricao" type="text" class="form-control" value="" aria-describedby="descricao" placeholder="descricao">
           
             <br />
             <label>Valor</label>
-            <input formControlName="valor" name="valor" type="number" class="form-control" value="{{modal_valor}}" aria-describedby="valor" placeholder="valor">
+            <input formControlName="valor" name="valor" type="number" class="form-control" value="" aria-describedby="valor" placeholder="valor">
           
             <br />
             <label>estoque</label>
-            <input formControlName="estoque" name="estoque" type="number" class="form-control" value="{{modal_estoque}}" aria-describedby="estoque" placeholder="qtd estoque">
+            <input formControlName="estoque" name="estoque" type="number" class="form-control" value="" aria-describedby="estoque" placeholder="qtd estoque">
+          
+            <br />
+            <label>destaque</label>
+            <input formControlName="destaque" name="destaque" type="text" class="form-control" value="" aria-describedby="destaque" placeholder="destaque">
           
             <br />
             <label>marcaId</label>
-            <input formControlName="marcaId" name="marcaId" type="text" class="form-control" value="{{modal_marca}}" aria-describedby="marca" placeholder="id marca">
+            <input formControlName="marcaId" name="marcaId" type="text" class="form-control" value="" aria-describedby="marca" placeholder="id marca">
           
             <br />
             <label>fornecedorId</label>
-            <input formControlName="fornecedorId" name="fornecedorId" type="text" class="form-control" value="{{modal_fornecedor}}" aria-describedby="fornecedor" placeholder="id fornecedor">
+            <input formControlName="fornecedorId" name="fornecedorId" type="text" class="form-control" value="" aria-describedby="fornecedor" placeholder="id fornecedor">
           
           </div>
 
@@ -175,19 +179,23 @@
               <input disabled="" type="text" value="{{modal_id}}" class="form-control">
               <br />
               <label>Nome</label>
-              <input formControlName="nome" name="nome" type="text" class="form-control" value="{{modal_nome}}" aria-describedby="nome" placeholder="Seu nome">
+              <input formControlName="nome" name="nome" type="text" class="form-control" value="" aria-describedby="nome" placeholder="Nome">
             
               <br />
               <label>Descrição</label>
-              <input formControlName="descricao" name="descricao" type="text" class="form-control" value="{{modal_descricao}}" aria-describedby="descricao" placeholder="Seu nome">
+              <input formControlName="descricao" name="descricao" type="text" class="form-control" value="" aria-describedby="descricao" placeholder="descricao">
             
               <br />
               <label>Valor</label>
-              <input formControlName="valor" name="valor" type="number" class="form-control" value="{{modal_valor}}" aria-describedby="valor" placeholder="valor">
+              <input formControlName="valor" name="valor" type="number" class="form-control" value="" aria-describedby="valor" placeholder="valor">
             
               <br />
               <label>estoque</label>
-              <input formControlName="estoque" name="estoque" type="number" class="form-control" value="{{modal_estoque}}" aria-describedby="estoque" placeholder="qtd estoque">
+              <input formControlName="estoque" name="estoque" type="number" class="form-control" value="" aria-describedby="estoque" placeholder="qtd estoque">
+            
+              <br />
+              <label>destaque</label>
+              <input formControlName="destaque" name="destaque" type="text" class="form-control" value="" aria-describedby="destaque" placeholder="sim ou nao">
             
             </div>
 
@@ -224,6 +232,9 @@
           <br />
           <label>estoque</label>
           <input disabled="" type="number" value="{{modal_estoque}}" class="form-control">
+          <br />
+          <label>destaque</label>
+          <input disabled="" type="destaque" value="{{modal_destaque}}" class="form-control">
           <br />
         </div>
         <div class="modal-footer">

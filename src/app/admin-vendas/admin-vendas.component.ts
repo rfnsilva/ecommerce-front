@@ -32,7 +32,7 @@ export class AdminVendasComponent implements OnInit {
 
   ngOnInit(): void {
     this.javascript();
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
 
     const headers= new HttpHeaders()
      .set('content-type', 'application/json')
@@ -49,7 +49,7 @@ export class AdminVendasComponent implements OnInit {
     //edit = 1 del = 2 detalhes = 3
     
     if (id_button === 2) {
-      let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+      let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
 
       if(confirm("confirma delete do produto: " + id)) {
         const headers= new HttpHeaders()
@@ -71,7 +71,7 @@ export class AdminVendasComponent implements OnInit {
   }
 
   add(venda: any) {
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
     
     const headers = new HttpHeaders()
      .set('content-type', 'application/json')

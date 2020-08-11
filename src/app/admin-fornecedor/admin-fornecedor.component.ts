@@ -28,7 +28,7 @@ export class AdminFornecedorComponent implements OnInit {
 
   ngOnInit(): void {
     this.javascript();
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
     
     const headers= new HttpHeaders()
      .set('content-type', 'application/json')
@@ -43,7 +43,7 @@ export class AdminFornecedorComponent implements OnInit {
   
   Adicionar(id_button: number, id: string, nome: string) {
     //edit = 1 del = 2 detalhes = 3
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
     
     if (id_button === 2) {
       if(confirm("confirma delete da categoria: " + id)) {
@@ -71,7 +71,7 @@ export class AdminFornecedorComponent implements OnInit {
   }
 
   editar(fornecedor: any) {
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
     const cat_enviar = {
       nome: `${fornecedor.nome}`
     }
@@ -92,7 +92,7 @@ export class AdminFornecedorComponent implements OnInit {
   }
 
   add(fornecedor: any) {
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
     
     const headers = new HttpHeaders()
      .set('content-type', 'application/json')

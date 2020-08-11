@@ -25,7 +25,7 @@ export class HomeAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.javascript();
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
 
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
@@ -51,7 +51,6 @@ export class HomeAdminComponent implements OnInit {
     this.http.get(`${this.apiURL}/get_top_vendas`, { 'headers': headers })
       .subscribe(result => {
         this.top_vendas = result;
-        console.log(this.top_vendas)
       });
   }
 

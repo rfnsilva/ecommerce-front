@@ -29,7 +29,7 @@ export class AdminContaComponent implements OnInit {
 
   ngOnInit(): void {
     this.javascript();
-    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+    let user_data = JSON.parse(window.localStorage.getItem('currentAdmin'));
     
     const headers= new HttpHeaders()
      .set('content-type', 'application/json')

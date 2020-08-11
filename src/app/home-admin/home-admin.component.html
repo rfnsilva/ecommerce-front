@@ -67,8 +67,8 @@
 
 <div class="container-fluid">
     <div class="row" style="padding: 0 5px 0 55px;">
-        <div class="col-xl-3 col-sm-4 col-12"> 
-            <div class="card">
+        <div class="col-xl-3 col-md-4 col-sm-4 col-12"> 
+            <div class="card" style="margin: 0 0 10px 0;">
                 <div class="card-content">
                     <div class="card-body">
                         <div class="media d-flex">
@@ -85,8 +85,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-4 col-12"> 
-                <div class="card">
+        <div class="col-xl-3 col-md-4 col-sm-4 col-12"> 
+                <div class="card" style="margin: 0 0 10px 0;">
                     <div class="card-content">
                         <div class="card-body">
                             <div class="media d-flex">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
         </div>
-        <div class="col-xl-3 col-sm-4 col-12"> 
+        <div class="col-xl-3 col-md-4 col-sm-4 col-12"> 
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
@@ -123,19 +123,19 @@
     </div>
 </div>
 <div style="margin-top: 50px;justify-content: center;" class="row">
-    <h2>TOP 10 Ultimos Vendidos</h2>
+    <h2 style="margin: 0 0 0 62px;">TOP 10 Ultimos Vendidos</h2>
 </div>
 <div class="container-fluid table-responsive" style="padding: 0 5px 0 65px!important;">
     <table class="table table-hover table-dark">
       <thead>
         <tr>
-          <th scope="col">id_produto</th>
+          <th scope="col">nome produto</th>
           <th scope="col">data</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let top_venda of top_vendas">
-          <th id="id_corte" scope="row">{{top_venda?.id_produto}}</th>
+          <th id="id_corte" scope="row">{{top_venda?.nome_produto}}</th>
           <td id="id_corte">{{top_venda?.created_at}}</td>
         </tr>
       </tbody>

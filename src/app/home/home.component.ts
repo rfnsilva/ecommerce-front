@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   public id_marca: string;
   public rota: Router;
   public check_box: any;
+  public indisponivel: boolean = true;
 
   constructor(private http : HttpClient, private r: Router){
     this.apiURL = 'http://localhost:3333';
@@ -32,7 +33,6 @@ export class HomeComponent implements OnInit {
     this.http.get(`${this.apiURL}/get_produtos_destaque`, { 'headers': headers })
       .subscribe(result => {
         this.produtos = result;
-        console.log(this.produtos)
       });//.pipe(delay(2000))
     
     this.http.get(`${this.apiURL}/get_marcas`, { 'headers': headers })
@@ -61,23 +61,25 @@ export class HomeComponent implements OnInit {
     if (window.localStorage.getItem('currentUser') !== null) {
       let aux = JSON.parse(window.localStorage.getItem('currentUser'))
       let carrinho = {
-        userId: aux.id,
-        produtoId: id_produto
+        user_id: aux.id,
+        produto_id: id_produto
       }
-      console.log(carrinho)
 
       const headers = new HttpHeaders()
-      .set('content-type', 'application/json')
-        .set('Access-Control-Allow-Origin', '*');
+       .set('content-type', 'application/json')
+       .set('Access-Control-Allow-Origin', '*')
+       .set('authorization', `bearer ${aux.token}`);
       
       this.http.post(`${this.apiURL}/add_cart`, carrinho, { 'headers': headers })
-      .subscribe(result => {
-        let prod = result;
-        console.log(prod)
-      });
+        .subscribe(result => {
+          let prod: any = result;
+          if (prod.message === 'produto ja no carrinho') {
+            alert('produto ja adicionado ao carrinho, caso queira aumentar a quantidade do produto vsite a pagina do seu carrinho !')
+          }
+        });
     
     } else {
-      console.log('necessario logar para adicionar ao carrinho!')
+      alert('necessario esta logado para adicionar ao carrihno!')
     }
   }
   

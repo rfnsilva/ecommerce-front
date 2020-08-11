@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 
@@ -17,8 +17,10 @@ export class CarrinhoComponent implements OnInit {
   readonly apiURL: string;
   public id_user: string;
   public showSuccess: boolean;
-  public valor_total: number = 0;
   public ids_del_produtos: string[] = [];
+
+  @Input()
+  public valor_total: number = 0;
 
   public envio_paypal: Paypal[];
   public rota: Router;
@@ -28,9 +30,9 @@ export class CarrinhoComponent implements OnInit {
     this.rota = r;
   }
 
-  ngOnInit(){
+  ngOnInit() {
+    //this.javascript();
     let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
-    console.log(user_data.id)
 
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
@@ -42,7 +44,6 @@ export class CarrinhoComponent implements OnInit {
         this.user = result;
         this.carrinho = this.user.produtos;
         this.id_user = this.user.id;
-        console.log(this.carrinho)
         
         for (var i = 0; i < this.carrinho.length; i++){
           this.valor_total += this.carrinho[i].valor;
@@ -51,6 +52,21 @@ export class CarrinhoComponent implements OnInit {
       });
     
     this.initConfig();
+  }
+
+  deletar(produto_id: string) {
+    let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+
+    const headers= new HttpHeaders()
+     .set('content-type', 'application/json')
+     .set('Access-Control-Allow-Origin', '*')
+     .set('authorization', `bearer ${user_data.token}`);
+    
+    this.http.delete(`${this.apiURL}/delete_cart/${this.id_user}/${produto_id}`, { 'headers': headers })
+     .subscribe(result => {
+        this.user = result;
+        this.carrinho = this.user.produtos;
+     });
   }
 
   private initConfig(): void {
@@ -98,27 +114,28 @@ export class CarrinhoComponent implements OnInit {
         //console.log('onApprove - transaction was approved, but not authorized', data, actions);
         actions.order.get().then(details => {
           console.log('onApprove - you can get full order details inside onApprove: ', details);
+          this.showSuccess = true;
+          let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+
+          const headers= new HttpHeaders()
+          .set('content-type', 'application/json')
+          .set('Access-Control-Allow-Origin', '*')
+          .set('authorization', `bearer ${user_data.token}`);
+          
+          this.http.post(`${this.apiURL}/comprar_produto/${this.id_user}`, this.ids_del_produtos, { 'headers': headers })
+          .subscribe(result => {
+            console.log('resultado: ',result)
+          });
+          this.http.post(`${this.apiURL}/add_vendas_admin_cliente/${this.id_user}`, this.carrinho, { 'headers': headers })
+          .subscribe(result => {
+            console.log(result);
+          });
         });
       },
       onClientAuthorization: (data) => {
         //console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
         this.showSuccess = true;
-        let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
-
-        const headers= new HttpHeaders()
-         .set('content-type', 'application/json')
-         .set('Access-Control-Allow-Origin', '*')
-         .set('authorization', `bearer ${user_data.token}`);
-        
-        this.http.post(`${this.apiURL}/comprar_produto/${this.id_user}`, this.ids_del_produtos, { 'headers': headers })
-         .subscribe(result => {
-           console.log('resultado: ',result)
-         });
-        this.http.post(`${this.apiURL}/add_vendas_admin_cliente/${this.id_user}`, this.carrinho, { 'headers': headers })
-         .subscribe(result => {
-           console.log(result);
-         });
-        
+          
         this.r.navigate(['/confirmacao'], { queryParams: data});
       },
       onCancel: (data, actions) => {
