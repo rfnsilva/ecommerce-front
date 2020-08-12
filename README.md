@@ -97,3 +97,11 @@
 <p align="center"> 
 <img width="400" height="300" src="https://i.ibb.co/6vz2c9X/Captura-de-tela-de-2020-08-12-05-34-46.png"/>
 </p><br />
+
+<h3 align="center"> DARK/LIGHT MODES </h3><br />
+<p align="center"> 
+<img width="400" height="300" src="https://i.ibb.co/cytRv8Q/Captura-de-tela-de-2020-08-12-05-58-16.png"/>
+<img width="400" height="300" src="https://i.ibb.co/jwHmZhH/Captura-de-tela-de-2020-08-12-05-58-04.png"/>
+</p><br />
+
+
