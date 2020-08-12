@@ -80,7 +80,27 @@
 <img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
 </p><br />
 
-<h4 align="center"> por enquanto temos apenas o metodo de pagaento do paypal </h4><br />
+<h4 align="center"> por enquanto temos apenas o metodo de pagamento do paypal </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> clique no botão do paypal e insira seus dados(SANDBOX - conta para desenvolvedores) </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> quando confirmar o pagamento vc sera redirecionado para uma pagina de confirmação bem simples, clique em home </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center">repare agora que o quantidade(informação ao lado do botão de adicionar ao carrinho) dos produtos diminui </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> agora faça login com admin de novo e acesse o dashboard, aqui vc vera que a venda ja foi adicionada a tabela e o estoque atualizado </h4><br />
 <p align="center"> 
 <img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
 </p><br />
