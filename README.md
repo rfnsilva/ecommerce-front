@@ -1,27 +1,22 @@
-# Frontend
+<h2 align="center"> Tecnologias usadas <span>BACK-END</span> </h2>
+<h4 align="center"> Nodejs, Typescript, Typeorm, JWT, Bcrypt, Postgres, Babel </h4><br />
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+<h2 align="center"> Como testar </h2>
+<h4 align="center"> Prmeiro: rode <span>yarn</span> para baixar as dependencias </h4>
+<h4 align="center"> Segundo: configure o arquivo ormconfig.json de acordo com seus dados </h4>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<h3 align="center"> Feito as configuraçes acima, rode para testar </h3>
+<h3 align="center"> Tutorial do projeto complete, tanto esse back-end com o front-end rodando </h3>
 
-## Code scaffolding
+<h4 align="center"> primeiro entre no localhost:4200, vera que o site n tem nenhum produto ainda </h4>
+<h4 align="center"> para adicionar role ate o final da pagina, clique em registrar admin e faça o registro </h4>
+<h4 align="center"> assim que se registrar vc sera redirecionado para o dashboard do admin </h4>
+<h4 align="center"> nessa tela inicial vc verá informações como vendas, contas, estoque, e um tabela com as ultimas 10 venda </h4>
+<h4 align="center"> claro que estará tudo zerado ainda </h4>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<p align="center">
+<img src="https://img.shields.io/static/v1?label=Node&message=SERVE&color=gren&style=for-the-badge&logo=NODE"/>
+</p>
+<h4 align="center"> basta executar no terminal <span>yarn dev</span> e acessar o localost:3333 </h4><br />
