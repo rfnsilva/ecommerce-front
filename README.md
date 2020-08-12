@@ -45,7 +45,7 @@
 
 <h4 align="center"> agora que ja adicionamos um fornecedor e um marca podemos adicionar um produto, será necessario os ids tanto da marca quanto do fornecedor do produto, e caso vc queira que o produto seja mostrado na home pra o cliente sem precisar de filtro, adicione sim no input destaque no formulario de adicionar produto, insira varios produtos com e sem a opção de destaque como sim </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://media.giphy.com/media/dxIi0wH6dYOf1jIwPL/giphy.gif"/>
+<img width="600" height="400" src="https://i.ibb.co/sv739Yv/Captura-de-tela-de-2020-08-12-05-47-45.png"/>
 </p><br />
 
 <h4 align="center"> assim que adicionar os produtos volte na pagina home(dashboard), vc vera que o estoque ja esta atualizado assim como as contas, no caso das contas sempre que vc adiciona um produto com o id do fornecedor o valor do produto e adicionado na conta, em breve farei a opção de pagar  </h4><br />
