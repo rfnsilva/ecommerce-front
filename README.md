@@ -33,8 +33,54 @@
 <img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
 </p><br />
 
-<h4 align="center"> acesse o menu lateral e clique em marcas, vamos adicionar uma </h4><br />
+<h4 align="center"> quando se adiciona um fornecedor uma conta é gerada automaticamente para ele, para ve acesse contas </h4><br />
 <p align="center"> 
 <img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
 </p><br />
 
+<h4 align="center"> acesse o menu lateral e clique em marcas, vamos adicionar uma tbm </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> agora que ja adicionamos um fornecedor e um marca podemos adicionar um produto, será necessario os ids tanto da marca quanto do fornecedor do produto, e caso vc queira que o produto seja mostrado na home pra o cliente sem precisar de filtro, adicione sim no input destaque no formulario de adicionar produto, insira varios produtos com e sem a opção de destaque como sim </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> assim que adicionar os produtos volte na pagina home(dashboard), vc vera que o estoque ja esta atualizado assim como as contas, no caso das contas sempre que vc adiciona um produto com o id do fornecedor o valor do produto e adicionado na conta, em breve farei a opção de pagar  </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+
+<h4 align="center"> agora acesse o home page do cliente em localhost:4200/home, vera que os produtos ja esta aqui, no caso os marcados com destaque </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+
+<h4 align="center"> para ve os produtos adicionado com nao no destaque escolha um filtro e aplique, todos os produtos da marca selecionada irão aparecer </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> aqui agora a primeira coisa a se fazer é cadastrar um cliente, sera necessario um cliente logado para adicionar ao carrinho </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> assim que vc se logar vera que um link para o carrinho apareceu na barra de navegação </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> adicione um ou mais produtos no carrinho </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
+
+<h4 align="center"> por enquanto temos apenas o metodo de pagaento do paypal </h4><br />
+<p align="center"> 
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+</p><br />
