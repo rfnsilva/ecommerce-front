@@ -25,7 +25,7 @@
 
 <h4 align="center"> logo que se registrar vc sera redirecionado para a dashboard, aqui temos informações como vendas, estoque e contas, tudo zerado ainda </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/6vz2c9X/Captura-de-tela-de-2020-08-12-05-34-46.png"/>
 </p><br />
 
 <h4 align="center"> acesse o menu lateral e clique em fornecedores, vamos adicionar um </h4><br />
@@ -35,12 +35,12 @@
 
 <h4 align="center"> quando se adiciona um fornecedor uma conta é gerada automaticamente para ele, para ve acesse contas </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/JBs9Nzw/Captura-de-tela-de-2020-08-12-05-37-51.png"/>
 </p><br />
 
 <h4 align="center"> acesse o menu lateral e clique em marcas, vamos adicionar uma tbm </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/85cGHPh/Captura-de-tela-de-2020-08-12-05-38-13.png"/>
 </p><br />
 
 <h4 align="center"> agora que ja adicionamos um fornecedor e um marca podemos adicionar um produto, será necessario os ids tanto da marca quanto do fornecedor do produto, e caso vc queira que o produto seja mostrado na home pra o cliente sem precisar de filtro, adicione sim no input destaque no formulario de adicionar produto, insira varios produtos com e sem a opção de destaque como sim </h4><br />
@@ -50,13 +50,13 @@
 
 <h4 align="center"> assim que adicionar os produtos volte na pagina home(dashboard), vc vera que o estoque ja esta atualizado assim como as contas, no caso das contas sempre que vc adiciona um produto com o id do fornecedor o valor do produto e adicionado na conta, em breve farei a opção de pagar  </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/jG4kW7H/Captura-de-tela-de-2020-08-12-05-39-21.png"/>
 </p><br />
 
 
 <h4 align="center"> agora acesse o home page do cliente em localhost:4200/home, vera que os produtos ja esta aqui, no caso os marcados com destaque </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/D4Vbnmp/Captura-de-tela-de-2020-08-12-05-38-41.png"/>
 </p><br />
 
 
@@ -72,7 +72,7 @@
 
 <h4 align="center"> assim que vc se logar vera que um link para o carrinho apareceu na barra de navegação </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/dG1h1yx/Captura-de-tela-de-2020-08-12-05-39-59.png"/>
 </p><br />
 
 <h4 align="center"> adicione um ou mais produtos no carrinho </h4><br />
@@ -92,10 +92,10 @@
 
 <h4 align="center">repare agora que o quantidade(informação ao lado do botão de adicionar ao carrinho) dos produtos diminui </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/bz48mP9/Captura-de-tela-de-2020-08-12-05-40-20.png"/>
 </p><br />
 
 <h4 align="center"> agora faça login com admin de novo e acesse o dashboard, aqui vc vera que a venda ja foi adicionada a tabela e o estoque atualizado </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/6vz2c9X/Captura-de-tela-de-2020-08-12-05-34-46.png"/>
 </p><br />
