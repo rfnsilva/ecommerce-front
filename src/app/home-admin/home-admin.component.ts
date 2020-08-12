@@ -54,6 +54,11 @@ export class HomeAdminComponent implements OnInit {
       });
   }
 
+  logout() {
+    window.localStorage.clear();
+    this.rota.navigate(['/home']);
+  }
+
   javascript() {
     $(document).ready(function () {
       $("#header_none").css("display", "none");

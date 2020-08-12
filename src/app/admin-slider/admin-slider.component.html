@@ -77,19 +77,18 @@
     <thead>
       <tr>
         <th scope="col">id</th>
-        <th scope="col">Nome</th>
+        <th scope="col">URL</th>
         <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let for of fornecedores">
-        <th id="id_corte" scope="row">{{ for?.id }}</th>
-        <td id="id_corte">{{ for?.nome }}</td>
+      <tr *ngFor="let slider of sliders">
+        <th id="id_corte" scope="row">{{ slider?.id }}</th>
+        <td id="id_corte">{{ slider?.url }}</td>
         <td>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" (click)="Adicionar(1, for?.id, for?.nome)" data-toggle="modal" data-target="#exampleModal1" class="btn btn-secondary">edit</button>
-              <button type="button" (click)="Adicionar(2, for?.id, for?.nome)" data-toggle="modal" data-target="#exampleModal2" class="btn btn-secondary">del</button>
-              <button type="button" (click)="Adicionar(3, for?.id, for?.nome)" data-toggle="modal" data-target="#exampleModal3" class="btn btn-secondary">detalhes</button>
+              <button type="button" (click)="Adicionar(1, slider?.id, slider?.url)" data-toggle="modal" data-target="#exampleModal1" class="btn btn-secondary">edit</button>
+              <button type="button" (click)="Adicionar(2, slider?.id, slider?.url)" data-toggle="modal" data-target="#exampleModal2" class="btn btn-secondary">del</button>
             </div>
         </td>
       </tr>
@@ -115,8 +114,8 @@
         <form [formGroup]="profileForm" (ngSubmit)="onSubmit1()">
 
           <div class="form-group">
-            <label>Nome</label>
-            <input formControlName="nome" type="text" class="form-control">
+            <label>URL imagem</label>
+            <input formControlName="url" type="text" class="form-control">
           </div>
 
           <button type="button" class="btn btn-secondary botao" data-dismiss="modal">Fechar</button>
@@ -144,38 +143,13 @@
               <label>ID</label>
               <input disabled="" type="text" value="{{modal_id}}" class="form-control">
               <br />
-              <label>Nome</label>
-              <input formControlName="nome" name="nome" type="text" class="form-control" value="" aria-describedby="nome" placeholder="Seu nome">
+              <label>URL imagem</label>
+              <input formControlName="url" name="url" type="text" class="form-control" value="" aria-describedby="url" placeholder="url imagem">
             </div>
 
             <button id="edit" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
             <button id="edit" type="submit" [disabled]="!profileForm.valid" name="button" class="btn btn-primary">Salvar</button>
           </form>
-        </div>
-      </div>
-    </div>
-</div>
-
-<!--detalhes-->
-<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <label>ID</label>
-          <input disabled="" type="text" value="{{modal_id}}" class="form-control">
-          <br />
-          <label>Nome</label>
-          <input disabled="" type="text" value="{{modal_nome}}" class="form-control">
-          <br />
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>

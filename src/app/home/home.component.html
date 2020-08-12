@@ -1,5 +1,5 @@
 
-<div class="main">
+<div id="mode_7" class="main">
   <div id="slider" class="container-fluid">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -7,25 +7,28 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
+      
       <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/RCAhiGJsUUE/1920x1080')">
+        <div class="carousel-item active" style="background-image: url('https://i.ibb.co/54CNqrf/Buy-online-sale-slider-template.jpg');img-fluid ">
           <div class="carousel-caption d-none d-md-block">
             <h3 class="display-4">First Slide</h3>
             <p class="lead">This is a description for the first slide.</p>
           </div>
         </div>
-        <div class="carousel-item" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1920x1080')">
+        <div class="carousel-item" style="background-image: url('https://i.ibb.co/GV0c2mc/Black-friday-sale-slider-design.jpg');img-fluid ">
           <div class="carousel-caption d-none d-md-block">
             <h3 class="display-4">Second Slide</h3>
             <p class="lead">This is a description for the second slide.</p>
           </div>
         </div>
-        <div class="carousel-item" style="background-image: url('https://source.unsplash.com/O7fzqFEfLlo/1920x1080')">
+        <!--
+        <div *ngFor="let slider of sliders" class="carousel-item active" style="background-image: url({{slider?.url}})">
           <div class="carousel-caption d-none d-md-block">
-            <h3 class="display-4">Third Slide</h3>
-            <p class="lead">This is a description for the third slide.</p>
+            <h3 class="display-4">First Slide</h3>
+            <p class="lead">This is a description for the first slide.</p>
           </div>
         </div>
+        -->
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -41,37 +44,40 @@
           <div class="t-products p-2">
               <h6 class="text-uppercase">Filtros</h6>
           </div>
-          <div class="brand p-2">
+          <div id="mode_8" class="brand p-2">
               <div class="heading d-flex justify-content-between align-items-center">
                   <h6 class="text-uppercase">MARCAS</h6> <span>--</span>
               </div>
               <div class="d-flex justify-content-between mt-2" *ngFor="let marca of marcas;">
                   <div class="form-check">
-                    <input [(ngModel)]="check_box" (change)="pre_filtrar(marca?.id)" class="form-check-input" type="radio" value={{marca?.id}}> 
-                    <label class="form-check-label" for="flexCheckDefault"> {{marca?.nome}} </label> 
+                        <label class="label">
+                          <div class="toggle">
+                            <input (change)="pre_filtrar(marca?.id)" [(ngModel)]="check_box" class="toggle-state" type="radio" name="radio" value={{marca?.id}} />
+                            <div class="indicator"></div>
+                          </div>
+                          <div style="color: #000;" class="label-text"> {{marca?.nome}} </div>
+                        </label>
                   </div> 
                   <span>13</span>
               </div>
-              <button (click)="filtrar()" type="submit" name="button" class="btn btn-primary">filtrar</button>
+              <button style="width: 100%;margin-top: 15px;background-color: #551ddb;border:none;" (click)="filtrar()" type="submit" name="button" class="btn btn-primary">filtrar</button>
           </div>
       </div>
       <div class="col-md-9">
 
-        <h2 style="text-align: center;">Mais Vendidos</h2>
+        <h2 style="text-align: center;color:#585252;">Mais Vendidos</h2>
 
         <div class="row g-2">
-          <div class="col-md-4 produto_item" *ngFor="let produto of produtos">
+          <div class="col-md-4 col-sm-4 col-lg-3 col-xs-3 produto_item produto_item_r" *ngFor="let produto of produtos">
               <div class="product py-4">
-
-                <div id="" style="display: none;"></div>
 
                 <div id="" class="text-center"> <img src="https://i.imgur.com/nOFet9u.jpg" width="100%"> </div>
                 
                 <div class="about text-center">
-                    <h5>{{produto?.nome}}</h5> <span>${{produto?.valor}}</span>
+                    <h5>{{produto?.nome}}</h5> <span style="color: #fff;">${{produto?.valor}}</span>
                 </div>
                 <div class="cart-button mt-3 px-2 d-flex justify-content-between align-items-center">
-                  <button (click)="add_cart(produto?.id)" class="bg-3">Add carrinho</button>
+                  <button style="border: none;" (click)="add_cart(produto?.id)" class="bg-3">Add carrinho</button>
                   <div style="width: 38px; height: 38px; background-color: rgb(117, 110, 110);">
                     <p style="text-align: center; margin-top: 6px;">{{produto?.estoque}}</p>
                   </div>

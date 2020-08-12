@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 
 import { Paypal } from '../models/Paypal';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrinho',
@@ -25,14 +25,19 @@ export class CarrinhoComponent implements OnInit {
   public envio_paypal: Paypal[];
   public rota: Router;
   
-  constructor(private http : HttpClient, private r: Router){
+  constructor(private http : HttpClient, private r: Router, private route: ActivatedRoute,){
     this.apiURL = 'http://localhost:3333';
     this.rota = r;
   }
 
   ngOnInit() {
-    //this.javascript();
     let user_data = JSON.parse(window.localStorage.getItem('currentUser'));
+
+    const aux_mode = this.route.snapshot.paramMap.get('mode');
+    if (aux_mode === 'true') {
+      this.javascript();
+    }
+    
 
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
@@ -52,6 +57,10 @@ export class CarrinhoComponent implements OnInit {
       });
     
     this.initConfig();
+  }
+
+  javascript() {
+    $('#mode_10').addClass('mode_10');
   }
 
   deletar(produto_id: string) {

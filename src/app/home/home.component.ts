@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   readonly apiURL: string;
   public produtos: any;
   public marcas: any;
+  public sliders: any;
   public marca: any;
   public id_marca: string;
   public rota: Router;
@@ -39,6 +40,12 @@ export class HomeComponent implements OnInit {
       .subscribe(result => {
         this.marcas = result;
       });
+    
+    this.http.get(`${this.apiURL}/get_sliders`, { 'headers': headers })
+      .subscribe(result => {
+        this.sliders = result;
+        console.log(this.sliders)
+      });
   }
 
   pre_filtrar(id: string) {
@@ -46,15 +53,20 @@ export class HomeComponent implements OnInit {
   }
 
   filtrar() {
-    const headers = new HttpHeaders()
-      .set('content-type', 'application/json')
-      .set('Access-Control-Allow-Origin', '*');
+    console.log(this.id_marca)
+    if (this.id_marca === undefined) {
+      alert('selecione alguma marca para filtrar');
+    } else {
+      const headers = new HttpHeaders()
+        .set('content-type', 'application/json')
+        .set('Access-Control-Allow-Origin', '*');
 
-    this.http.get(`${this.apiURL}/get_marca/${this.id_marca}`, { 'headers': headers })
-      .subscribe(result => {
-        this.marca = result;
-        this.produtos = this.marca.produtos;
-      });
+      this.http.get(`${this.apiURL}/get_marca/${this.id_marca}`, { 'headers': headers })
+        .subscribe(result => {
+          this.marca = result;
+          this.produtos = this.marca.produtos;
+        });
+    }
   }
 
   add_cart(id_produto) {
@@ -68,13 +80,28 @@ export class HomeComponent implements OnInit {
       const headers = new HttpHeaders()
        .set('content-type', 'application/json')
        .set('Access-Control-Allow-Origin', '*')
-       .set('authorization', `bearer ${aux.token}`);
+        .set('authorization', `bearer ${aux.token}`);
       
-      this.http.post(`${this.apiURL}/add_cart`, carrinho, { 'headers': headers })
+      //verificar se o produto tem estoque
+      this.http.get(`${this.apiURL}/get_produto_id/${id_produto}`, { 'headers': headers })
         .subscribe(result => {
-          let prod: any = result;
-          if (prod.message === 'produto ja no carrinho') {
-            alert('produto ja adicionado ao carrinho, caso queira aumentar a quantidade do produto vsite a pagina do seu carrinho !')
+          let verfy_estoque: any = result;
+          console.log(verfy_estoque)
+
+          if (verfy_estoque.estoque > 0) {
+            console.log('tem estoque')
+      
+            this.http.post(`${this.apiURL}/add_cart`, carrinho, { 'headers': headers })
+              .subscribe(result => {
+                let prod: any = result;
+                if (prod.message === 'produto ja no carrinho') {
+                  alert('produto ja adicionado ao carrinho, caso queira aumentar a quantidade do produto vsite a pagina do seu carrinho !')
+                } else {
+                  alert('adicionado ao carrinho!')
+                }
+              });
+          } else {
+            alert('produto em falta no memento')
           }
         });
     

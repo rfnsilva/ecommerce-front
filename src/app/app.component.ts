@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   });
   readonly apiURL : string;
   public rota: Router;
+  public mode: any;
 
   @Input()
   public ctrl: boolean = true;
@@ -32,6 +33,33 @@ export class AppComponent implements OnInit {
 
     if (window.localStorage.getItem('currentUser')) {
       this.ctrl = false;
+    }
+  }
+
+  //light mode
+  pre_mode() {
+    if (this.mode === true) {
+      $('#mode_1').addClass('mode_1');
+      $('#mode_2').addClass('mode_2');
+      $('#mode_3').addClass('mode_3');
+      $('#mode_4').addClass('mode_4');
+      $('#mode_5').addClass('mode_5');
+      $('.produto_item').addClass('mode_6');
+      $('#mode_7').addClass('mode_7');
+      $('#mode_8').addClass('mode_8');
+      $('#model_9').addClass('model_9');
+      $('#mode_10').addClass('mode_10');
+    } else {
+      $('#mode_1').removeClass('mode_1');
+      $('#mode_2').removeClass('mode_2');
+      $('#mode_3').removeClass('mode_3');
+      $('#mode_4').removeClass('mode_4');
+      $('#mode_5').removeClass('mode_5');
+      $('.produto_item').removeClass('mode_6');
+      $('#mode_7').removeClass('mode_7');
+      $('#mode_8').removeClass('mode_8');
+      $('#model_9').removeClass('model_9');
+      $('#mode_10').removeClass('mode_10');
     }
   }
 
