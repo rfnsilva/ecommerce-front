@@ -101,7 +101,7 @@
 <h3 align="center"> DARK/LIGHT MODES </h3><br />
 <p align="center"> 
 <img width="400" height="300" src="https://i.ibb.co/cytRv8Q/Captura-de-tela-de-2020-08-12-05-58-16.png"/>
-<img width="400" height="300" src="https://media.giphy.com/media/XCs357cKNd8R1nnTVt/giphy.gif"/>
+<img width="400" height="300" src="https://media.giphy.com/media/hQiEwcREJUlKWX5asg/giphy.gif"/>
 </p><br />
 
 
