@@ -82,7 +82,7 @@
 
 <h4 align="center"> por enquanto temos apenas o metodo de pagamento do paypal </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/bz48mP9/Captura-de-tela-de-2020-08-12-05-40-20.png"/>
 </p><br />
 
 <h4 align="center"> clique no botão do paypal e insira seus dados(SANDBOX - conta para desenvolvedores), quando confirmar o pagamento vc sera redirecionado para uma pagina de confirmação bem simples, clique em home </h4><br />
@@ -91,9 +91,7 @@
 </p><br />
 
 <h4 align="center">repare agora que o quantidade(informação ao lado do botão de adicionar ao carrinho) dos produtos diminui </h4><br />
-<p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/bz48mP9/Captura-de-tela-de-2020-08-12-05-40-20.png"/>
-</p><br />
+
 
 <h4 align="center"> agora faça login com admin de novo e acesse o dashboard, aqui vc vera que a venda ja foi adicionada a tabela e o estoque atualizado </h4><br />
 <p align="center"> 
