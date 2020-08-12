@@ -1,10 +1,10 @@
-<h1 align="center"> Login, Registro, e forgot </h1>
-<h4 align="center"> Projeto com foco nas funcionalidades de registrar/logar e recuperação de senha </h4><br />
+<h1 align="center"> Ecommerce </h1>
+<h4 align="center"> Este projeto simula uma loja virtual onde temos a parte do cliente e tbm do admin </h4><br />
 
 <h2 align="center"> Tecnologias usadas <span>FRONT-END</span> </h2>
 <h4 align="center"> Angular 2+, HTML5, CSS3/SCSS, JWT, Bcrypt </h4><br />
 
-<h2 align="center"> Como testar </h2>
+<h2 align="center"> Como testar(necessario o back-end) </h2>
 <h4 align="center">Primeiro rode npm install para instalar as dependencias</h4><br />
 <p align="center">
 <img src="https://img.shields.io/static/v1?label=angular&message=SERVE&color=red&style=for-the-badge&logo=ANGULAR"/>
@@ -16,29 +16,25 @@
 </p>
 <h4 align="center"> basta executar no terminal ng build </h4><br />
 
-<h2 align="center"><span>IMAGENS</span> </h2>
+<h2 align="center"><span>TUTORIAL</span> </h2>
+
+<h4 align="center"> registre-se como admin </h4><br />
 <p align="center"> 
 <img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
 </p><br />
 
+<h4 align="center"> logo que se registrar vc sera redirecionado para a dashboard, aqui temos informações como vendas, estoque e contas, tudo zerado ainda </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/rwQLYTP/asdass.png"/>
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
 </p><br />
 
+<h4 align="center"> acesse o menu lateral e clique em fornecedores, vamos adicionar um </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/ScN45nv/asdasa.png"/>
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
 </p><br />
 
+<h4 align="center"> acesse o menu lateral e clique em marcas, vamos adicionar uma </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/vJSTTcx/Captura-de-tela-de-2020-08-05-20-41-56.png"/>
+<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
 </p><br />
-
-<h2 align="center"> Deploy da Aplicação com Netlify: :dash: </h2>
-<h4 align="center"> https://infallible-wright-a8d49d.netlify.app/ </h4>
-
-<h4 align="center"> primeiro entre no localhost:4200, vera que o site n tem nenhum produto ainda </h4>
-<h4 align="center"> para adicionar role ate o final da pagina, clique em registrar admin e faça o registro </h4>
-<h4 align="center"> assim que se registrar vc sera redirecionado para o dashboard do admin </h4>
-<h4 align="center"> nessa tela inicial vc verá informações como vendas, contas, estoque, e um tabela com as ultimas 10 venda </h4>
-<h4 align="center"> claro que estará tudo zerado ainda </h4>
 
