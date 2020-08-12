@@ -20,7 +20,7 @@
 
 <h4 align="center"> registre-se como admin </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/5Ly9Qf5/admin-register.gif"/>
 </p><br />
 
 <h4 align="center"> logo que se registrar vc sera redirecionado para a dashboard, aqui temos informações como vendas, estoque e contas, tudo zerado ainda </h4><br />
@@ -30,7 +30,7 @@
 
 <h4 align="center"> acesse o menu lateral e clique em fornecedores, vamos adicionar um </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/nDXFp0q/add-fornecedor.gif"/>
 </p><br />
 
 <h4 align="center"> quando se adiciona um fornecedor uma conta é gerada automaticamente para ele, para ve acesse contas </h4><br />
@@ -62,12 +62,12 @@
 
 <h4 align="center"> para ve os produtos adicionado com nao no destaque escolha um filtro e aplique, todos os produtos da marca selecionada irão aparecer </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/9NkN841/filtro.gif"/>
 </p><br />
 
 <h4 align="center"> aqui agora a primeira coisa a se fazer é cadastrar um cliente, sera necessario um cliente logado para adicionar ao carrinho </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/sFQJQfN/register-client.gif"/>
 </p><br />
 
 <h4 align="center"> assim que vc se logar vera que um link para o carrinho apareceu na barra de navegação </h4><br />
@@ -77,7 +77,7 @@
 
 <h4 align="center"> adicione um ou mais produtos no carrinho </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/0DMRRN7/add-cart.gif"/>
 </p><br />
 
 <h4 align="center"> por enquanto temos apenas o metodo de pagamento do paypal </h4><br />
@@ -92,7 +92,7 @@
 
 <h4 align="center"> quando confirmar o pagamento vc sera redirecionado para uma pagina de confirmação bem simples, clique em home </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/Vxn5yG3/asdas.png"/>
+<img width="600" height="400" src="https://i.ibb.co/M1gpYrv/pagamento.gif"/>
 </p><br />
 
 <h4 align="center">repare agora que o quantidade(informação ao lado do botão de adicionar ao carrinho) dos produtos diminui </h4><br />
