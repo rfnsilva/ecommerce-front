@@ -25,7 +25,7 @@
 
 <h4 align="center"> logo que se registrar vc sera redirecionado para a dashboard, aqui temos informações como vendas, estoque e contas, tudo zerado ainda </h4><br />
 <p align="center"> 
-<img width="600" height="400" src="https://i.ibb.co/6vz2c9X/Captura-de-tela-de-2020-08-12-05-34-46.png"/>
+<img width="600" height="400" src="https://i.ibb.co/LnJ4WQn/Captura-de-tela-de-2020-08-12-05-45-23.png"/>
 </p><br />
 
 <h4 align="center"> acesse o menu lateral e clique em fornecedores, vamos adicionar um </h4><br />
