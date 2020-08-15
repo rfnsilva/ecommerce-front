@@ -7,4 +7,4 @@
 <h3>VEJA o back-end <a href="https://github.com/rfnsilva/ecommerce-back">aqui</a></h3>
 
 <h2>Veja o video (clique na imagem abaixo) demostrando o funcionamento</h2>
-<a href="https://youtu.be/3vAtU1OBHLY"><img width=500 height=400 src="https://i.ibb.co/NxVM5ZH/Captura-de-tela-de-2020-08-14-12-05-51.png" alt="Captura-de-tela-de-2020-08-14-12-05-51" border="0"></a>
+<a href="https://youtu.be/Z9z8-S2Mgvg"><img width=500 height=400 src="https://i.ibb.co/CbfThcy/Captura-de-tela-de-2020-08-15-04-58-44.png" border="0"></a>
