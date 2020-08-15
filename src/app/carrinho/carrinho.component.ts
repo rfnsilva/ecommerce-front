@@ -82,18 +82,18 @@ export class CarrinhoComponent implements OnInit {
 
     this.payPalConfig = {
       
-      currency: 'EUR',
+      currency: 'BRL',
       clientId: 'sb',
       createOrderOnClient: (data) => <ICreateOrderRequest>{
         intent: 'CAPTURE',
         purchase_units: [
           {
             amount: {
-              currency_code: 'EUR',
+              currency_code: 'BRL',
               value: `${this.valor_total}`,
               breakdown: {
                 item_total: {
-                  currency_code: 'EUR',
+                  currency_code: 'BRL',
                   value: `${this.valor_total}`
                 }
               }
@@ -104,7 +104,7 @@ export class CarrinhoComponent implements OnInit {
                 quantity: '1',
                 category: 'DIGITAL_GOODS',
                 unit_amount: {
-                  currency_code: 'EUR',
+                  currency_code: 'BRL',
                   value: `${this.valor_total}`,
                 },
               }
