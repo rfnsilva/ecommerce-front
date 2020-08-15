@@ -1,27 +1,10 @@
-# Frontend
+<h1>Ecommerce</h1>
+<h2><strong>Tecnologias</strong>: Angular ( front ), Node ( back ), Postgres, Typeorm, typescript</h2>
+<h2><strong>Regras de negocio</strong></h2>
+<h3>ADMIN: O admin pode cadastrar fornecedores, marcas, produtos(quando inserido aparecerá na pagina de vendas do cliente), vendas; O admin tem acesso a dashboard que contém dados como estoque, contas com fornecedores, vendas e uma tabela com as ultimas dez vendas realizadas</h3>
+<h3>CLIENTE: O cliente tem acesso a pagina de vendas na qual estará presente os produtos adicionado pelo admin; O cliente pode filtrar os produtos pelas marcas; Se o cliente se cadastrar poderá adicionar produtos ao carrinho e compra-los atualmente apenas pelo paypal.</h3>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+<h3>VEJA o back-end <a href="https://github.com/rfnsilva/ecommerce-back">aqui</a></h3>
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<h2>Veja o video (clique na imagem abaixo) demostrando o funcionamento</h2>
+<a href="https://youtu.be/Z9z8-S2Mgvg"><img width=500 height=400 src="https://i.ibb.co/CbfThcy/Captura-de-tela-de-2020-08-15-04-58-44.png" border="0"></a>
